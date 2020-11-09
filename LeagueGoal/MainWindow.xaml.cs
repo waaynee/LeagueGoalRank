@@ -92,15 +92,27 @@ namespace LeagueGoal
             if(!OnStartup) ComputeNeededWins();
         }
 
+        private void tbLPGoal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            try
+            {
+                Settings.Default.tbLPGoal = Convert.ToInt32(tbLPGoal.Text);
+                Settings.Default.Save();
+
+                if (!OnStartup) ComputeNeededWins();
+            }
+            catch (FormatException) { }
+        }
+
         private void ComputeNeededWins()
         {
             if (tbWinsNeeded == null) return;
-            if (Settings.Default.tbLPgain == 0)
+            if (Convert.ToInt32(Settings.Default.tbLPgain) == 0)
             {
                 tbWinsNeeded.Text = "0";
                 return;
             }
-            if (Settings.Default.tbLP > 100)
+            if (Convert.ToInt32(Settings.Default.tbLP) > 100)
             {
                 MessageBox.Show("LP cannot be higher than 100.");
                 return;
@@ -110,14 +122,15 @@ namespace LeagueGoal
 
             int currentLeague = Settings.Default.cmbLeagueIndex;
             int currentDivision = Settings.Default.cmbDivisionIndex;
-            int currentLp = Settings.Default.tbLP;
-            int currentLpGain = Settings.Default.tbLPgain;
+            int currentLp = Convert.ToInt32(Settings.Default.tbLP);
+            int currentLpGain = Convert.ToInt32(Settings.Default.tbLPgain);
 
             int highestLeague = Settings.Default.cmbHrLeague;
             int highestDivision = Settings.Default.cmbHrDivision;
 
             int goalLeague = Settings.Default.cmbLeagueGoalIndex;
             int goalDivision = Settings.Default.cmbDivisionGoalIndex;
+            int goalLp = Settings.Default.tbLPGoal;
 
             while(currentLeague < goalLeague || (currentLeague == goalLeague && currentDivision < goalDivision))
             {
@@ -144,8 +157,15 @@ namespace LeagueGoal
                         winsNeeded += 2;
                     }
                     currentDivision++;
-                    currentLp = 0;
                 }
+                currentLp = 0;
+            }
+
+            if(currentLp < goalLp)
+            {
+                int wins = (goalLp - currentLp) / currentLpGain;
+                if ((goalLp - currentLp) % currentLpGain > 0) wins++;
+                winsNeeded += wins;
             }
 
             tbWinsNeeded.Text = winsNeeded.ToString();

@@ -118,5 +118,17 @@ namespace LeagueGoal.Properties {
                 this["cmbHrDivision"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int tbLPGoal {
+            get {
+                return ((int)(this["tbLPGoal"]));
+            }
+            set {
+                this["tbLPGoal"] = value;
+            }
+        }
     }
 }
