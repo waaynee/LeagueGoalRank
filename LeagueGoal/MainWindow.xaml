@@ -1,0 +1,81 @@
+﻿<Window x:Class="LeagueGoal.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:LeagueGoal"
+        mc:Ignorable="d"
+        Title="League Goal" Height="335" Width="469">
+    <Grid Margin="0,0,0,0">
+        <GroupBox Header="Current Info" HorizontalAlignment="Left" Height="165" Margin="10,10,0,0" VerticalAlignment="Top" Width="200">
+            <Grid>
+                <Label Content="League" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Division" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                <Label Content="LP" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top"/>
+                <Label Content="LP+" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbLeague" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbLeague_SelectionChanged">
+                    <ComboBoxItem Content="Iron"/>
+                    <ComboBoxItem Content="Bronze"/>
+                    <ComboBoxItem Content="Silver"/>
+                    <ComboBoxItem Content="Gold"/>
+                    <ComboBoxItem Content="Platinum"/>
+                    <ComboBoxItem Content="Diamond"/>
+                </ComboBox>
+                <ComboBox x:Name="cmbDivision" HorizontalAlignment="Left" Margin="67,41,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbDivision_SelectionChanged">
+                    <ComboBoxItem Content="IV"/>
+                    <ComboBoxItem Content="III"/>
+                    <ComboBoxItem Content="II"/>
+                    <ComboBoxItem Content="I"/>
+                </ComboBox>
+                <TextBox x:Name="tbLP" HorizontalAlignment="Left" Height="23" Margin="67,72,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" TextChanged="tbLP_TextChanged"/>
+                <TextBox x:Name="tbLPgain" HorizontalAlignment="Left" Height="23" Margin="67,103,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" TextChanged="tbLPgain_TextChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Goal" HorizontalAlignment="Left" Height="100" Margin="215,10,0,0" VerticalAlignment="Top" Width="200">
+            <Grid>
+                <Label Content="League" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Division" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbLeagueGoal" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbLeagueGoal_SelectionChanged">
+                    <ComboBoxItem Content="Iron"/>
+                    <ComboBoxItem Content="Bronze"/>
+                    <ComboBoxItem Content="Silver"/>
+                    <ComboBoxItem Content="Gold"/>
+                    <ComboBoxItem Content="Platinum"/>
+                    <ComboBoxItem Content="Diamond"/>
+                </ComboBox>
+                <ComboBox x:Name="cmbDivisionGoal" HorizontalAlignment="Left" Margin="67,41,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbDivisionGoal_SelectionChanged">
+                    <ComboBoxItem Content="IV"/>
+                    <ComboBoxItem Content="III"/>
+                    <ComboBoxItem Content="II"/>
+                    <ComboBoxItem Content="I"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Wins needed" HorizontalAlignment="Left" Height="60" Margin="215,115,0,0" VerticalAlignment="Top" Width="200">
+            <Grid>
+                <TextBox x:Name="tbWinsNeeded" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="168" IsReadOnly="True"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Highest Season Rank" HorizontalAlignment="Left" Height="100" Margin="10,180,0,0" VerticalAlignment="Top" Width="200">
+            <Grid>
+                <Label Content="League" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+                <Label Content="Division" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
+                <ComboBox x:Name="cmbHrLeague" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbHrLeague_SelectionChanged">
+                    <ComboBoxItem Content="Iron"/>
+                    <ComboBoxItem Content="Bronze"/>
+                    <ComboBoxItem Content="Silver"/>
+                    <ComboBoxItem Content="Gold"/>
+                    <ComboBoxItem Content="Platinum"/>
+                    <ComboBoxItem Content="Diamond"/>
+                </ComboBox>
+                <ComboBox x:Name="cmbHrDivision" HorizontalAlignment="Left" Margin="67,41,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbHrDivision_SelectionChanged">
+                    <ComboBoxItem Content="IV"/>
+                    <ComboBoxItem Content="III"/>
+                    <ComboBoxItem Content="II"/>
+                    <ComboBoxItem Content="I"/>
+                </ComboBox>
+            </Grid>
+        </GroupBox>
+
+    </Grid>
+</Window>
