@@ -31,11 +31,13 @@
                 <TextBox x:Name="tbLPgain" HorizontalAlignment="Left" Height="23" Margin="67,103,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" TextChanged="tbLPgain_TextChanged"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Goal" HorizontalAlignment="Left" Height="132" Margin="215,10,0,0" VerticalAlignment="Top" Width="200">
+        <GroupBox Header="Goal" HorizontalAlignment="Left" Height="165" Margin="215,10,0,0" VerticalAlignment="Top" Width="200">
             <Grid>
                 <Label Content="League" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
                 <Label Content="Division" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top"/>
                 <Label Content="LP" HorizontalAlignment="Left" Margin="10,67,0,0" VerticalAlignment="Top"/>
+                <Label Content="Winrate" HorizontalAlignment="Left" Margin="10,98,0,0" VerticalAlignment="Top"/>
+                <Label Content="%" HorizontalAlignment="Left" Margin="147,93,0,0" VerticalAlignment="Top"/>
                 <ComboBox x:Name="cmbLeagueGoal" HorizontalAlignment="Left" Margin="67,10,0,0" VerticalAlignment="Top" Width="100" SelectionChanged="cmbLeagueGoal_SelectionChanged">
                     <ComboBoxItem Content="Iron"/>
                     <ComboBoxItem Content="Bronze"/>
@@ -51,9 +53,10 @@
                     <ComboBoxItem Content="I"/>
                 </ComboBox>
                 <TextBox x:Name="tbLPGoal" HorizontalAlignment="Left" Height="23" Margin="67,68,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="100" TextChanged="tbLPGoal_TextChanged"/>
+                <TextBox x:Name="tbWinrate" HorizontalAlignment="Left" Height="23" Margin="67,96,0,0" TextWrapping="Wrap" Text="100" VerticalAlignment="Top" Width="75" TextChanged="tbWinrate_TextChanged"/>
             </Grid>
         </GroupBox>
-        <GroupBox Header="Wins needed" HorizontalAlignment="Left" Height="60" Margin="215,147,0,0" VerticalAlignment="Top" Width="200">
+        <GroupBox Header="Wins needed" HorizontalAlignment="Left" Height="60" Margin="215,201,0,0" VerticalAlignment="Top" Width="200">
             <Grid>
                 <TextBox x:Name="tbWinsNeeded" HorizontalAlignment="Left" Height="23" Margin="10,10,0,0" TextWrapping="Wrap" Text="0" VerticalAlignment="Top" Width="168" IsReadOnly="True"/>
             </Grid>

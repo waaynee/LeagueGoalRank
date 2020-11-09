@@ -130,5 +130,17 @@ namespace LeagueGoal.Properties {
                 this["tbLPGoal"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public float tbWinrate {
+            get {
+                return ((float)(this["tbWinrate"]));
+            }
+            set {
+                this["tbWinrate"] = value;
+            }
+        }
     }
 }
