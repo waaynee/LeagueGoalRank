@@ -10,8 +10,6 @@ namespace LeagueGoal
     /// </summary>
     public partial class MainWindow : Window
     {
-        private bool OnStartup = true;
-
         public MainWindow()
         {
             InitializeComponent();
@@ -24,8 +22,6 @@ namespace LeagueGoal
             cmbDivisionGoal.SelectedIndex = Settings.Default.cmbDivisionGoalIndex;
             tbLP.Text = Settings.Default.tbLP.ToString();
             tbLPgain.Text = Settings.Default.tbLPgain.ToString();
-
-            OnStartup = false;
         }
 
         private void cmbLeague_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -33,7 +29,7 @@ namespace LeagueGoal
             Settings.Default.cmbLeagueIndex = cmbLeague.SelectedIndex;
             Settings.Default.Save();
 
-            if (!OnStartup) ComputeNeededWins();
+            ComputeNeededWins();
         }
 
         private void cmbDivision_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -41,7 +37,7 @@ namespace LeagueGoal
             Settings.Default.cmbDivisionIndex = cmbDivision.SelectedIndex;
             Settings.Default.Save();
 
-            if (!OnStartup) ComputeNeededWins();
+            ComputeNeededWins();
         }
 
         private void cmbLeagueGoal_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -49,7 +45,7 @@ namespace LeagueGoal
             Settings.Default.cmbLeagueGoalIndex = cmbLeagueGoal.SelectedIndex;
             Settings.Default.Save();
 
-            if (!OnStartup) ComputeNeededWins();
+            ComputeNeededWins();
         }
 
         private void cmbDivisionGoal_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -57,7 +53,7 @@ namespace LeagueGoal
             Settings.Default.cmbDivisionGoalIndex = cmbDivisionGoal.SelectedIndex;
             Settings.Default.Save();
 
-            if (!OnStartup) ComputeNeededWins();
+            ComputeNeededWins();
         }
 
         private void cmbHrLeague_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -65,7 +61,7 @@ namespace LeagueGoal
             Settings.Default.cmbHrLeague = cmbHrLeague.SelectedIndex;
             Settings.Default.Save();
 
-            if (!OnStartup) ComputeNeededWins();
+            ComputeNeededWins();
         }
 
         private void cmbHrDivision_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -73,7 +69,7 @@ namespace LeagueGoal
             Settings.Default.cmbHrDivision = cmbHrDivision.SelectedIndex;
             Settings.Default.Save();
 
-            if (!OnStartup) ComputeNeededWins();
+            ComputeNeededWins();
         }
 
         private void tbLP_TextChanged(object sender, TextChangedEventArgs e)
@@ -83,7 +79,7 @@ namespace LeagueGoal
                 Settings.Default.tbLP = Convert.ToInt32(tbLP.Text);
                 Settings.Default.Save();
 
-                if (!OnStartup) ComputeNeededWins();
+                ComputeNeededWins();
             }
             catch (FormatException) { }
         }
@@ -95,7 +91,7 @@ namespace LeagueGoal
                 Settings.Default.tbLPgain = Convert.ToInt32(tbLPgain.Text);
                 Settings.Default.Save();
 
-                if (!OnStartup) ComputeNeededWins();
+                ComputeNeededWins();
             }
             catch (FormatException) { }
         }
@@ -107,7 +103,7 @@ namespace LeagueGoal
                 Settings.Default.tbLPGoal = Convert.ToInt32(tbLPGoal.Text);
                 Settings.Default.Save();
 
-                if (!OnStartup) ComputeNeededWins();
+                ComputeNeededWins();
             }
             catch (FormatException) { }
         }
@@ -119,7 +115,7 @@ namespace LeagueGoal
                 Settings.Default.tbWinrate = Convert.ToSingle(tbWinrate.Text);
                 Settings.Default.Save();
 
-                if (!OnStartup) ComputeNeededWins();
+                ComputeNeededWins();
             }
             catch (FormatException) { }
         }
